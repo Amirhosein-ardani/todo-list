@@ -1,0 +1,121 @@
+@font-face {
+    font-family: vazir-bold;
+    src: url(../font/Vazir-Bold.woff2);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  direction: rtl;
+  font-family: vazir-bold;
+  background-image: url(../images/wood.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 400px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #0f0f0f;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: transform 0.3s ease, border 0.3s ease;
+  font-family: vazir-bold;
+  font-size: 15px;
+}
+
+input:focus {
+  transform: translateY(-2px);
+  border-color: #888;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background-color: #218838;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+li {
+  background-color: rgb(22, 20, 20,0.7);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+li:hover {
+  transform: translateY(-2px);
+  background-color: rgba(19, 18, 18, 0.6);
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+  background-color: #c82333;
+}
+
+li span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+li span strong {
+  margin-bottom: 5px;
+}
