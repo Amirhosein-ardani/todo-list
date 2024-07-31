@@ -14,6 +14,7 @@ document
     document.getElementById("title").value = "";
     document.getElementById("description").value = "";
   });
+  
 
 function addTodoItem(title, description) {
   const todoList = document.getElementById("todo-list");
@@ -24,8 +25,19 @@ function addTodoItem(title, description) {
             <strong>${title}</strong>
             <small>${description}</small>
         </span>
+        <input type="checkbox" class="complete-checkbox">
         <button class="delete-btn">حذف</button>
     `;
+  li.querySelector('.complete-checkbox').addEventListener(
+    'change',
+    function () {
+      if (this.checked) {
+        li.classList.add('completed');
+      } else {
+        li.classList.remove('completed');
+      }
+    }
+  );
 
   li.querySelector(".delete-btn").addEventListener("click", function () {
     todoList.removeChild(li);
@@ -47,9 +59,11 @@ function loadTodos() {
     addTodoItem(todo.title, todo.description);
   });
 }
-
-function removeTodoItem(title) {
-  let todos = JSON.parse(localStorage.getItem("todos")) || [];
-  todos = todos.filter((todo) => todo.title !== title);
-  localStorage.setItem("todos", JSON.stringify(todos));
+function createRemoveTodoItem() {
+  return function(title) {
+    let todos = JSON.parse(localStorage.getItem("todos")) || [];
+    todos = todos.filter((todo) => todo.title !== title);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
 }
+
